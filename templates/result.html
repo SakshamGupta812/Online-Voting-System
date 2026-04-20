@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-wrapper">
+
+    <div class="auth-card result-card">
+
+        <h2 class="auth-title">📊 Voting Results</h2>
+
+        <div class="result-stats">
+            <p>Candidate A: <b>{{ pA }}%</b></p>
+            <p>Candidate B: <b>{{ pB }}%</b></p>
+            <p>Candidate C: <b>{{ pC }}%</b></p>
+        </div>
+
+        <h3 class="winner">🏆 Winner: {{ winner }}</h3>
+
+        <p class="confidence">
+            Confidence Interval: {{ low }}% - {{ high }}%
+        </p>
+
+        <!-- CHART -->
+       <div class="chart">
+
+    <div class="bar-container">
+        <div class="bar a" style="height: {{ pA * 2 }}px;"></div>
+        <div class="bar-label">A</div>
+    </div>
+
+    <div class="bar-container">
+        <div class="bar b" style="height: {{ pB * 2 }}px;"></div>
+        <div class="bar-label">B</div>
+    </div>
+
+    <div class="bar-container">
+        <div class="bar c" style="height: {{ pC * 2 }}px;"></div>
+        <div class="bar-label">C</div>
+    </div>
+
+</div>
+
+
+        <hr>
+
+        <!-- ACTION BUTTONS -->
+        <div class="result-actions">
+
+            <button onclick="location.href='/vote'" class="btn-blue">
+                ⬅ Back to Voting
+            </button>
+
+            <button onclick="location.href='/reset'" class="btn-yellow">
+                🔄 Reset Votes
+            </button>
+
+            <button onclick="location.href='/reset_users'" class="btn-red">
+                🗑️ Reset All
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
