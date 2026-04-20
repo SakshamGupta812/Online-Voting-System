@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-wrapper">
+
+    <div class="auth-card">
+
+        <h2 class="auth-title">🗳️ Voting System</h2>
+        <p class="auth-subtitle">Votes Left: {{ 5 - total_votes }}</p>
+
+        {% if msg %}
+    <p class="vote-msg">{{ msg }}</p>
+{% endif %}
+
+        <form method="POST">
+
+            <div class="vote-card">
+                <img src="/static/a.png">
+                <button name="candidate" value="A" class="btn-blue">Vote A</button>
+            </div>
+
+            <div class="vote-card">
+                <img src="/static/b.png">
+                <button name="candidate" value="B" class="btn-blue">Vote B</button>
+            </div>
+
+            <div class="vote-card">
+                <img src="/static/c.png">
+                <button name="candidate" value="C" class="btn-blue">Vote C</button>
+            </div>
+
+        </form>
+
+        <hr>
+
+        <button onclick="location.href='/logout'" class="btn-red">Logout</button>
+
+        <button onclick="location.href='/result'" class="btn-green">
+            Result after 5 votes
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
